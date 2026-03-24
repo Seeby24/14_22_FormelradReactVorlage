@@ -63,8 +63,8 @@ export default function Formelrad() {
             /*calculate r and p */
             setValues(values => ({...values, r: values.u / values.i}));
             setValues(values => ({...values, p: values.u * values.i}));
-            setColors( colors=> ({...colors, r:"red", p:"red"}));
-
+            setColors(colors => ({...colors, r: "red", p: "red"}));
+        }
         let count = 0;
         if (values.u === "") count++;
         if (values.i === "") count++;
@@ -109,6 +109,7 @@ export default function Formelrad() {
                 <header>
                     <h2>Formelrad</h2>
                     <img src={formelrad} width="200" alt="Formelrad"/>
+                    <p>Zwei Werte eingeben, die anderen werden berechnet.</p>
                 </header>
                 <form onSubmit={handleSubmit}>
                     <InputField color={colors.u} value={values.u} label="Spannung" handleChange={e => {setValues(values => ({...values, u: e.target.value}))}} />
